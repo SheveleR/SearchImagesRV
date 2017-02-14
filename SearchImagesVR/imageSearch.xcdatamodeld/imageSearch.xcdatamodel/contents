@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="SearchText" representedClassName="SearchText" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="urlRelationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="URLS" inverseName="searchUrl" inverseEntity="URLS" syncable="YES"/>
+    </entity>
+    <entity name="URLS" representedClassName="URLS" syncable="YES">
+        <attribute name="largeUrls" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallUrls" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="searchUrl" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SearchText" inverseName="urlRelationship" inverseEntity="SearchText" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SearchText" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="URLS" positionX="-351" positionY="-99" width="128" height="90"/>
+    </elements>
+</model>
